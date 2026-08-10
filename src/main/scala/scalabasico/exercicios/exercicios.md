@@ -22,7 +22,7 @@ Defina uma função que receba uma nota $N \in [0, 10]$ e retorne uma `String` c
 
 ---
 
-## Exercício 2.2 — Comissão de vendedor
+## Exercício 2.2 — [Comissão de vendedor](ComissaoVendedor.scala)
 
 Uma empresa paga R$1,00 de comissão por produto vendido. Se forem vendidos **mais de 250** produtos, o valor sobe para R$1,50/produto. Se forem **mais de 500**, sobe para R$2,00/produto.
 
@@ -32,7 +32,7 @@ Defina uma função que receba a quantidade de produtos vendidos e retorne a com
 
 ---
 
-## Exercício 2.3 — Classificação de temperatura
+## Exercício 2.3 — [Classificação de temperatura](ClassificadorTemperatura.scala)
 
 Defina uma função que receba um número real (temperatura em Celsius) e retorne uma **lista** com todas as classificações aplicáveis, na ordem da tabela (alguns intervalos se sobrepõem nas fronteiras):
 
@@ -50,7 +50,7 @@ Defina uma função que receba um número real (temperatura em Celsius) e retorn
 
 ---
 
-## Exercício 2.4 — Faixa etária
+## Exercício 2.4 — [Faixa etária](FaixaEtaria.scala)
 
 Defina uma função que receba uma idade inteira e retorne uma `String`:
 
@@ -62,7 +62,7 @@ Defina uma função que receba uma idade inteira e retorne uma `String`:
 
 ---
 
-## Exercício 2.5 — Decomposição em dígitos
+## Exercício 2.5 — [Decomposição em dígitos](DecomposicaoDigitos.scala)
 
 Defina uma função que receba um inteiro e retorne uma lista de 4 elementos `(m, c, d, u)`:
 
