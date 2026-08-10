@@ -8,9 +8,9 @@
 
 ---
 
-## Exercício 2.1 — Conceito por nota
+## Exercício 2.1 — [Conceito por nota](ConceitoNota.scala)
 
-Defina uma função que receba uma nota `N ∈ [0, 10]` e retorne uma `String` com o conceito correspondente:
+Defina uma função que receba uma nota $N \in [0, 10]$ e retorne uma `String` com o conceito correspondente:
 
 | Nota        | Conceito |
 |-------------|----------|
@@ -116,7 +116,7 @@ Defina uma função que recebe uma lista de números reais com **exatamente 3 el
 
 ---
 
-## Exercício 2.9 — Conversor de câmbio formatado
+## Exercício 2.9 — [Conversor de câmbio formatado](ConversorCambio.scala)
 
 Usando interpolação de strings (interpolador `f`), defina uma função que recebe um valor em Reais e uma taxa de câmbio, retornando uma string no formato:
 
@@ -125,8 +125,6 @@ Usando interpolação de strings (interpolador `f`), defina uma função que rec
 ```
 
 Ambos os valores devem ter exatamente 2 casas decimais.
-
-[Código](ConversorCambio.scala "ConversorCambio.scala")
 
 ---
 
