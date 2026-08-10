@@ -1,1 +1,0 @@
-**Restrições.** A solução dos exercícios deve ser feita de modo estritamente funcional. Não é permitido o uso de estruturas de controle imperativas, como `for` e `while`. Além disso, não é permitido o uso de variáveis mutáveis (`var`). As soluções devem ser escritas utilizando apenas funções puras, sem efeitos colaterais.
