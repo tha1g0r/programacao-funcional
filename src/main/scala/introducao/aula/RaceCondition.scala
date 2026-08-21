@@ -1,4 +1,4 @@
-package introducao
+package introducao.aula
 
 import scala.collection.parallel.CollectionConverters._
 

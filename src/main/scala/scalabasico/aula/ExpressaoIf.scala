@@ -1,4 +1,4 @@
-package scalabasico
+package scalabasico.aula
 
 @main def expressaoIf(): Unit =
     val x = 10

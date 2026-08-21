@@ -1,4 +1,4 @@
-package funcoes
+package funcoes.aula
 
 @main def composicaoFuncoes(): Unit =
     val f: Int => Int = x => x + 2

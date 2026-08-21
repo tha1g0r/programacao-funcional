@@ -1,4 +1,4 @@
-package funcoes
+package funcoes.aula
 
 @main def combinadoresColecao(): Unit =
     // map

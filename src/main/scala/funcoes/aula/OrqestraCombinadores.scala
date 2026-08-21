@@ -1,4 +1,4 @@
-package funcoes
+package funcoes.aula
 
 @main def orquestraCombinadores(): Unit =
     val numbers = List(1, 2, 3, 4, 5)

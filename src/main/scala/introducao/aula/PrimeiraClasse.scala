@@ -1,4 +1,4 @@
-package introducao
+package introducao.aula
 
 @main def primeiraClasse(): Unit =
     val square: Int => Int = x => x * x

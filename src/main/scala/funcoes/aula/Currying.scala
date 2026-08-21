@@ -1,4 +1,4 @@
-package funcoes
+package funcoes.aula
 
 @main def currying(): Unit =
     def sum(x: Int)(y: Int)(z: Int): Int = x + y + z

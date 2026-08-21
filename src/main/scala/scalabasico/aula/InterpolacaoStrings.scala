@@ -1,4 +1,4 @@
-package scalabasico
+package scalabasico.aula
 
 @main def interpolacaoStrings(): Unit =
     val name = "John Doe"

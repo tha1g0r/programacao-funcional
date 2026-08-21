@@ -1,4 +1,4 @@
-package funcoes
+package funcoes.aula
 
 // recebendo função como argumento
 def twice(f: Int => Int, x: Int): Int = f(f(x))

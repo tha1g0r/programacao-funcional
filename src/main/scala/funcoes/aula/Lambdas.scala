@@ -1,4 +1,4 @@
-package funcoes
+package funcoes.aula
 
 @main def lambdas(): Unit =
     val add: (Int, Int) => Int =

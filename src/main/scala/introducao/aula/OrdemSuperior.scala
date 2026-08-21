@@ -1,4 +1,4 @@
-package introducao
+package introducao.aula
 
 @main def ordemSuperior(): Unit =
     def map(xs: List[Int], f: Int => Int): List[Int] =

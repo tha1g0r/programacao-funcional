@@ -1,4 +1,4 @@
-package funcoes
+package funcoes.aula
 
 // aridade 2
 trait Function2[A, B, R] {

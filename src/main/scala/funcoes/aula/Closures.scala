@@ -1,4 +1,4 @@
-package funcoes
+package funcoes.aula
 
 @main def closures(): Unit =
     def f(x: Int) = // : Int => Int
