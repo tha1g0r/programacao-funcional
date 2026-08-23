@@ -20,8 +20,8 @@ type PriceModifier = Double => Double
   * @return Um PriceModifier que reduz o preço na porcentagem dada
   */
 def discount(percentage: Double): PriceModifier = {
-  // TODO: Implementar usando currying
-  ???
+    // TODO: Implementar usando currying
+    preco => preco * (1.0 - percentage)
 }
 
 /**
@@ -31,8 +31,8 @@ def discount(percentage: Double): PriceModifier = {
   * @return Um PriceModifier que aumenta o preço na taxa dada
   */
 def tax(rate: Double): PriceModifier = {
-  // TODO: Implementar usando currying
-  ???
+    // TODO: Implementar usando currying
+    preco => preco * (1.0 + rate)
 }
 
 /**
@@ -43,8 +43,9 @@ def tax(rate: Double): PriceModifier = {
   * @return Um PriceModifier que soma o custo do frete ao preço
   */
 def shipping(costPerKg: Double)(weight: Double): PriceModifier = {
-  // TODO: Implementar usando currying e aplicação parcial
-  ???
+    // TODO: Implementar usando currying e aplicação parcial
+    val freteTotal = costPerKg * weight
+    price => price + freteTotal
 }
 
 /**
@@ -58,8 +59,8 @@ def shipping(costPerKg: Double)(weight: Double): PriceModifier = {
   * @return Uma função que recebe um Item e produz um PriceModifier correspondente
   */
 def applyIf(condition: Item => Boolean, modifier: PriceModifier): Item => PriceModifier = {
-  // TODO: Implementar a lógica condicional e retornar o PriceModifier correspondente
-  ???
+    // TODO: Implementar a lógica condicional e retornar o PriceModifier correspondente
+    item => if condition(item) then modifier else identity
 }
 
 /**
@@ -76,8 +77,22 @@ def applyIf(condition: Item => Boolean, modifier: PriceModifier): Item => PriceM
   * @return Um PriceModifier contendo todas as regras aplicáveis encadeadas por andThen
   */
 def pricingPipeline(item: Item): PriceModifier = {
-  // TODO: Implementar o pipeline composto usando composição com `andThen`
-  ???
+    // TODO: Implementar o pipeline composto usando composição com `andThen`
+    val isElectronics: Item => Boolean =
+        item => item.category == "Electronics"
+    val isBooks: Item => Boolean =
+        item => item.category == "Books"
+
+    val electronicsDiscount = applyIf(isElectronics, discount(0.10))
+    val electronicsTax = applyIf(isElectronics, tax(0.120))
+    val electronicsShipping = applyIf(isElectronics, shipping(2.0)(item.weight))
+
+    val booksDiscount = applyIf(isBooks, discount(0.15))
+    val booksTax = applyIf(isBooks, tax(0.0))
+    val booksShipping = applyIf(isBooks, shipping(5.0)(1.0))
+
+    electronicsDiscount(item) andThen electronicsTax(item) andThen electronicsShipping(item) andThen
+    booksDiscount(item) andThen booksTax(item) andThen booksShipping(item)
 }
 
 /**
@@ -88,16 +103,19 @@ def pricingPipeline(item: Item): PriceModifier = {
   * @return O preço final totalizado do carrinho precificado
   */
 def calculateCartTotal(cart: List[Item]): Double = {
-  // TODO: Filtrar itens com basePrice <= 0, precificar cada um e acumular o valor total
-  ???
+    // TODO: Filtrar itens com basePrice <= 0, precificar cada um e acumular o valor total
+    cart
+    .filter(_.basePrice > 0)
+    .map(item => pricingPipeline(item)(item.basePrice))
+    .reduce(_ + _)
 }
 
 @main def runPricing(): Unit = {
-  // val cart = List(
-  //   Item("1", 100.0, "Electronics", 2.0),
-  //   Item("2", 20.0, "Books", 0.5),
-  //   Item("3", -5.0, "Invalid", 1.0)
-  // )
+    val cart = List(
+        Item("1", 100.0, "Electronics", 2.0),
+        Item("2", 20.0, "Books", 0.5),
+        Item("3", -5.0, "Invalid", 1.0)
+    )
   // Descomente a linha abaixo após implementar as funções para testar manualmente:
-  // println(s"Total calculado do carrinho: R$$ ${calculateCartTotal(cart)}")
+    println(s"Total calculado do carrinho: R$$ ${calculateCartTotal(cart)}")
 }
