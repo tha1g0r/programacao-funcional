@@ -5,7 +5,7 @@
 Quais são as três características principais de uma função recursiva?
 
 * [ ] a. Condição, loop e incremento.
-* [ ] b. Auto-referência, caso base e caso recursivo.
+* [x] b. Auto-referência, caso base e caso recursivo.
 * [ ] c. Mutabilidade, iteração e condição de parada.
 * [ ] d. Parâmetros, retorno e efeitos colaterais.
 * [ ] e. Entrada, processamento e saída.
@@ -15,9 +15,9 @@ Quais são as três características principais de uma função recursiva?
 Sobre a comparação entre abordagens imperativas (estruturadas com laços) e recursivas para controle de repetição, assinale as alternativas corretas:
 
 * [ ] a. A recursão simples consome menos espaço na pilha de execução do que um loop imperativo.
-* [ ] b. A solução imperativa estruturada com laços geralmente depende de variáveis de controle e mutação de estado.
-* [ ] c. A recursão pura alcança repetição por meio de novas chamadas de função com novos argumentos, sem mutabilidade.
-* [ ] d. A formulação recursiva expressa a lógica de repetição de forma mais próxima a definições matemáticas indutivas.
+* [x] b. A solução imperativa estruturada com laços geralmente depende de variáveis de controle e mutação de estado.
+* [x] c. A recursão pura alcança repetição por meio de novas chamadas de função com novos argumentos, sem mutabilidade.
+* [x] d. A formulação recursiva expressa a lógica de repetição de forma mais próxima a definições matemáticas indutivas.
 * [ ] e. Loops imperativos (como while ou for) não podem ser convertidos para equivalentes recursivos.
 
 ## Questão 3
@@ -26,9 +26,9 @@ Sobre casos base em funções recursivas, assinale as alternativas corretas:
 
 * [ ] a. Devem sempre retornar zero.
 * [ ] b. São opcionais em funções recursivas.
-* [ ] c. Podem ser múltiplos em uma função.
-* [ ] d. Definem quando a recursão deve parar.
-* [ ] e. São essenciais para evitar chamadas infinitas.
+* [x] c. Podem ser múltiplos em uma função.
+* [x] d. Definem quando a recursão deve parar.
+* [x] e. São essenciais para evitar chamadas infinitas.
 
 ## Questão 4
 
@@ -65,7 +65,7 @@ Classifique as funções A, B e C, respectivamente:
 
 * [ ] a. Recursiva na cauda; Recursiva na cauda; Recursiva na cauda.
 * [ ] b. Não recursiva na cauda; Recursiva na cauda; Não recursiva na cauda.
-* [ ] c. Recursiva na cauda; Não recursiva na cauda; Recursiva na cauda.
+* [x] c. Recursiva na cauda; Não recursiva na cauda; Recursiva na cauda.
 * [ ] d. Não recursiva na cauda; Não recursiva na cauda; Recursiva na cauda.
 * [ ] e. Recursiva na cauda; Não recursiva na cauda; Não recursiva na cauda.
 
@@ -74,10 +74,10 @@ Classifique as funções A, B e C, respectivamente:
 Sobre consumo de memória em recursões, considerando recursão simples em contraposição à recursão na cauda, assinale as alternativas corretas:
 
 * [ ] a. Todas as linguagens funcionais implementam TCO (Tail Call Optimization) automaticamente.
-* [ ] b. Recursão na cauda com otimização mantém consumo de memória constante.
-* [ ] c. Recursão simples consome memória proporcional à profundidade da recursão.
+* [x] b. Recursão na cauda com otimização mantém consumo de memória constante.
+* [x] c. Recursão simples consome memória proporcional à profundidade da recursão.
 * [ ] d. Recursão é sempre mais eficiente em memória que iteração.
-* [ ] e. Stack overflow ocorre quando a pilha de chamadas excede o limite.
+* [x] e. Stack overflow ocorre quando a pilha de chamadas excede o limite.
 
 ## Questão 6
 
@@ -85,9 +85,9 @@ Sobre otimização de chamada na cauda (TCO, ou Tail Call Optimization) em Scala
 
 * [ ] a. Melhora a legibilidade do código.
 * [ ] b. Funciona automaticamente em qualquer função recursiva.
-* [ ] c. Evita o estouro de pilha em recursões profundas.
-* [ ] d. Reduz significativamente o consumo de memória.
-* [ ] e. Transforma chamadas recursivas em saltos diretos na implementação.
+* [x] c. Evita o estouro de pilha em recursões profundas.
+* [x] d. Reduz significativamente o consumo de memória.
+* [x] e. Transforma chamadas recursivas em saltos diretos na implementação.
 
 ## Questão 7
 
@@ -101,7 +101,7 @@ def mystery(n: Int): Int = {
 ```
 
 * [ ] a. A função não possui caso base.
-* [ ] b. A função não é recursiva na cauda.
+* [x] b. A função não é recursiva na cauda.
 * [ ] c. A função é recursiva na cauda.
 * [ ] d. A função irá causar estouro de pilha para qualquer valor de n.
 * [ ] e. A função não pode ser otimizada.
@@ -115,6 +115,7 @@ def alpha(x: Int): Int = {
   if (x <= 0) 0
   else x * x + alpha(x - 1)
 }
+// soma dos quadrados de n a 1
 ```
 
 Analise as quatro implementações tail recursive abaixo e assinale quais são funcionalmente equivalentes à função original.
@@ -124,7 +125,7 @@ Analise as quatro implementações tail recursive abaixo e assinale quais são f
 ```scala
 def beta(x: Int, acc: Int = 0): Int = {
   if (x <= 0) acc
-  else beta(x - 1, acc + x * x)
+  else beta(x - 1, acc + x * x) // sim
 }
 ```
 
@@ -133,7 +134,7 @@ def beta(x: Int, acc: Int = 0): Int = {
 ```scala
 def gamma(x: Int, acc: Int = 0): Int = {
   if (x <= 0) acc
-  else gamma(x - 1, acc + x)
+  else gamma(x - 1, acc + x) // nao
 }
 ```
 
@@ -142,7 +143,7 @@ def gamma(x: Int, acc: Int = 0): Int = {
 ```scala
 def delta(i: Int, x: Int, acc: Int = 0): Int = {
   if (i > x) acc
-  else delta(i + 1, x, acc + i * i)
+  else delta(i + 1, x, acc + i * i) // sim
 }
 ```
 
@@ -151,14 +152,14 @@ def delta(i: Int, x: Int, acc: Int = 0): Int = {
 ```scala
 def epsilon(i: Int, x: Int, acc: Int = 1): Int = {
   if (i > x) acc
-  else epsilon(i + 1, x, acc + i * i)
+  else epsilon(i + 1, x, acc + i * i) // nao
 }
 ```
 
 * [ ] a. Todas as opções são equivalentes.
 * [ ] b. Apenas as Opções A e B são equivalentes.
 * [ ] c. Apenas a Opção A é equivalente.
-* [ ] d. Apenas as Opções A e C são equivalentes.
+* [x] d. Apenas as Opções A e C são equivalentes.
 * [ ] e. Nenhuma das opções é equivalente.
 
 ## Questão 9
@@ -169,7 +170,7 @@ Uma chamada na cauda (tail call) é caracterizada por:
 * [ ] b. Usar apenas parâmetros primitivos.
 * [ ] c. Só poder ser usada em funções recursivas.
 * [ ] d. Ser a primeira operação da função.
-* [ ] e. Ser a última operação executada pela função antes de retornar.
+* [x] e. Ser a última operação executada pela função antes de retornar.
 
 ## Questão 10
 
@@ -185,7 +186,7 @@ def g(n: Int, acc: Int = 0): Int = {
 * [ ] a. Retornará resultado incorreto para valores altos.
 * [ ] b. Causará stack overflow.
 * [ ] c. Será mais lenta que a versão não tail recursive.
-* [ ] d. Executará normalmente sem problemas.
+* [x] d. Executará normalmente sem problemas.
 * [ ] e. Executará infinitamente.
 
 ## Questão 11
@@ -258,21 +259,21 @@ def produtoImpares(n: Int): Int = {
 
 Quais das implementações representam uma conversão válida da função iterativa acima?
 
-* [ ] a. Implementação A
+* [x] a. Implementação A
 * [ ] b. Implementação D
 * [ ] c. Implementação E
-* [ ] d. Implementação B
+* [x] d. Implementação B
 * [ ] e. Implementação C
 
 ## Questão 12
 
 Na conversão de loops imperativos para funções recursivas, assinale as alternativas corretas:
 
-* [ ] a. A condição do loop é utilizada para formar o caso base.
-* [ ] b. O corpo do loop torna-se o passo recursivo.
+* [x] a. A condição do loop é utilizada para formar o caso base.
+* [x] b. O corpo do loop torna-se o passo recursivo.
 * [ ] c. É impossível converter loops com múltiplas variáveis de controle.
 * [ ] d. A conversão sempre resulta em código mais eficiente.
-* [ ] e. As variáveis de controle do loop tornam-se parâmetros da função.
+* [x] e. As variáveis de controle do loop tornam-se parâmetros da função.
 
 ## Questão 13
 
@@ -287,9 +288,9 @@ def factorial(n: Int): Int = {
 
 * [ ] a. Usa menos memória que uma implementação não-recursiva.
 * [ ] b. É sempre mais eficiente que uma implementação iterativa.
-* [ ] c. Pode causar estouro de pilha para valores grandes de n.
-* [ ] d. É computacionalmente ineficiente porque não apresenta recursão na cauda.
-* [ ] e. A anotação `@tailrec` não pode ser aplicada a esta função.
+* [x] c. Pode causar estouro de pilha para valores grandes de n.
+* [x] d. É computacionalmente ineficiente porque não apresenta recursão na cauda.
+* [x] e. A anotação `@tailrec` não pode ser aplicada a esta função.
 
 ## Questão 14
 
@@ -351,10 +352,10 @@ def power(x: Int, n: Int, acc: Int = 1): Int = {
 
 Quais implementações representam conversões corretas para recursão na cauda?
 
-* [ ] a. Implementação D
-* [ ] b. Implementação A
+* [x] a. Implementação D
+* [x] b. Implementação A
 * [ ] c. Implementação C
-* [ ] d. Implementação E
+* [x] d. Implementação E
 * [ ] e. Implementação B
 
 ## Questão 15
@@ -409,7 +410,7 @@ Qual das implementações representa corretamente o fatorial usando recursão na
 * [ ] a. Implementação C
 * [ ] b. Implementação E
 * [ ] c. Implementação D
-* [ ] d. Implementação B
+* [x] d. Implementação B
 * [ ] e. Implementação A
 
 ## Questão 16
