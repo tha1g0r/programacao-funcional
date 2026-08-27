@@ -418,10 +418,10 @@ Qual das implementações representa corretamente o fatorial usando recursão na
 Sobre os requisitos para memoização eficaz, assinale as alternativas corretas:
 
 * [ ] a. A função memoizada não precisa ter transparência referencial.
-* [ ] b. A função memoizada deve ter transparência referencial.
-* [ ] c. Os argumentos da função devem ser imutáveis.
+* [x] b. A função memoizada deve ter transparência referencial.
+* [x] c. Os argumentos da função devem ser imutáveis.
 * [ ] d. A memoização é altamente vantajosa mesmo se a função for chamada quase sempre com argumentos inéditos.
-* [ ] e. A operação memoizada deve ser computacionalmente mais custosa que a manutenção do cache.
+* [x] e. A operação memoizada deve ser computacionalmente mais custosa que a manutenção do cache.
 
 ## Questão 17
 
@@ -442,10 +442,10 @@ val fibonacciMemoized: BigInt => BigInt = memoize { n =>
 
 Assinale as alternativas corretas:
 
-* [ ] a. Requer transparência referencial da função original.
-* [ ] b. Armazena resultados de chamadas anteriores para evitar recálculos.
+* [x] a. Requer transparência referencial da função original.
+* [x] b. Armazena resultados de chamadas anteriores para evitar recálculos.
 * [ ] c. Funciona melhor com funções que têm efeitos colaterais.
-* [ ] d. Reduz a complexidade de tempo de O(2ⁿ) para O(n).
+* [x] d. Reduz a complexidade de tempo de O(2ⁿ) para O(n).
 * [ ] e. Reduz a complexidade de espaço para O(1).
 
 ## Questão 18
@@ -506,11 +506,11 @@ def fibonacci(n: Int): BigInt = {
 
 Comparando essas implementações, assinale as alternativas corretas:
 
-* [ ] a. Memoização é mais útil quando a mesma função é chamada múltiplas vezes com os mesmos argumentos.
-* [ ] b. Para valores muito grandes de n, as versões iterativa e tail-recursive são preferíveis.
+* [x] a. Memoização é mais útil quando a mesma função é chamada múltiplas vezes com os mesmos argumentos.
+* [x] b. Para valores muito grandes de n, as versões iterativa e tail-recursive são preferíveis.
 * [ ] c. A implementação ingênua é adequada para valores grandes de n, por exemplo, n = 100.
 * [ ] d. A versão com memoização sempre usa menos memória que a iterativa.
-* [ ] e. A implementação tail-recursive combina eficiência com pureza funcional.
+* [x] e. A implementação tail-recursive combina eficiência com pureza funcional.
 
 ## Questão 19
 
@@ -532,17 +532,17 @@ Sobre performance e complexidade nas implementações de Fibonacci vistas em aul
 Com base nesses dados, assinale as alternativas corretas:
 
 * [ ] a. A implementação com memoização sempre supera a recursiva na cauda em velocidade.
-* [ ] b. A partir de n = 50, a implementação ingênua se torna praticamente inviável.
-* [ ] c. Para n = 45, a diferença de tempo entre implementação ingênua e a recursiva na cauda é de segundos versus microssegundos.
-* [ ] d. Para problemas com subproblemas sobrepostos, memoização oferece ganhos significativos.
+* [x] b. A partir de n = 50, a implementação ingênua se torna praticamente inviável.
+* [x] c. Para n = 45, a diferença de tempo entre implementação ingênua e a recursiva na cauda é de segundos versus microssegundos.
+* [x] d. Para problemas com subproblemas sobrepostos, memoização oferece ganhos significativos.
 * [ ] e. Complexidade de espaço O(n) é sempre preferível a O(1).
 
 ## Questão 20
 
 Sobre as limitações e considerações da memoização, assinale as alternativas corretas:
 
-* [ ] a. Pode não ser eficaz se a função for chamada com argumentos sempre diferentes.
-* [ ] b. Pode consumir memória excessiva se não houver limitação do tamanho do cache.
+* [x] a. Pode não ser eficaz se a função for chamada com argumentos sempre diferentes.
+* [x] b. Pode consumir memória excessiva se não houver limitação do tamanho do cache.
 * [ ] c. É incompatível com programação concorrente devido à mutabilidade do cache.
 * [ ] d. Memoização sempre melhora o desempenho independentemente do padrão de uso.
-* [ ] e. O overhead de manutenção do cache pode superar os benefícios para funções simples.
+* [x] e. O overhead de manutenção do cache pode superar os benefícios para funções simples.
