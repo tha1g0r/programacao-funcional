@@ -1,6 +1,7 @@
 package recursividade.atividades
 
 import scala.collection.mutable
+import scala.annotation.tailrec
 
 /**
  * Computes a single element of Pascal's Triangle using naive recursion.
@@ -23,7 +24,9 @@ import scala.collection.mutable
  * 1  3  3  1
  *1  4  6  4  1  <- row 4, position 2 = 6
  */
-def pascalRecursive(n: Int, k: Int): BigInt = ???
+def pascalRecursive(n: Int, k: Int): BigInt =
+    if k == 0 || n == k then 1
+    else pascalRecursive(n - 1, k - 1) + pascalRecursive(n - 1, k)
 
 /**
  * Computes a single element of Pascal's Triangle using memoization.
@@ -39,7 +42,11 @@ def pascalRecursive(n: Int, k: Int): BigInt = ???
  * 
  * Example: pascalMemoized(4, 2, mutable.Map()) should return 6
  */
-def pascalMemoized(n: Int, k: Int, memo: mutable.Map[(Int, Int), BigInt]): BigInt = ???
+def pascalMemoized(n: Int, k: Int, memo: mutable.Map[(Int, Int), BigInt]): BigInt =
+    if k == 0 || n == k then 1
+    else
+        memo.getOrElseUpdate((n, k),
+        pascalMemoized(n - 1, k - 1, memo) + pascalMemoized(n - 1, k, memo))
 
 /**
  * Computes a single element of Pascal's Triangle using an iterative approach.
@@ -64,4 +71,15 @@ def pascalTailRecursive(n: Int, k: Int): BigInt = ???
  * This function can be used to test and compare the different implementations
  * of Pascal's Triangle computation.
  */
-@main def mainPascalTriangle(): Unit = {}
+@main def mainPascalTriangle(): Unit = {
+    // pascalRecursive
+    println(pascalRecursive(4, 1))
+    println(pascalRecursive(4, 2))
+    println(pascalRecursive(4, 1))
+
+    // pascalMemoized
+    val memo = mutable.Map[(Int, Int), BigInt]()
+    println(pascalMemoized(4, 1, memo))
+    println(pascalMemoized(4, 2, memo))
+    println(pascalMemoized(4, 1, memo))
+}
