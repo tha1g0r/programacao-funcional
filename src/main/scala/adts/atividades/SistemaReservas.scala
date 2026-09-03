@@ -1,5 +1,7 @@
 package adts.atividades
 
+import adts.atividades.ResultadoReserva.Conflito
+
 // Tipos-base
 case class Sala(nome: String, capacidade: Int)
 
@@ -34,6 +36,27 @@ def validarSolicitacao(s: SolicitacaoReserva): Either[ErroReserva, SolicitacaoRe
         s2 <- validarCapacidade(s1)
         s3 <- validarSolicitante(s2)
     yield s3
+
+// Abstração de dados
+
+class Agenda private (val sala: Sala, val reserva: List[Horario]):
+    def adicionarReserva(h: Horario): Either[Horario, Agenda] =
+        temConflito(h) match
+            case None => Right(new Agenda(sala, reserva :+ h))
+            case Some(horarioConflitante) => Left(horarioConflitante)
+    def temConflito(h: Horario): Option[Horario] =
+        def verificar(horarios: List[Horario]): Option[Horario] =
+            horarios match
+                case Nil => None
+                case horarioAtual :: horariosRestantes =>
+                    val conflito = h.inicio < horarioAtual.fim &&
+                                   horarioAtual.inicio < h.fim
+                    if conflito then Some(horarioAtual)
+                    else verificar(horariosRestantes)
+        verificar(reserva)
+
+object Agenda:
+    def apply(sala: Sala): Agenda = new Agenda(sala, Nil)
 
 @main def mainSistemaReservas(): Unit =
     ???
