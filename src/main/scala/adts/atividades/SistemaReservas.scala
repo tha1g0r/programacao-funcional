@@ -58,5 +58,22 @@ class Agenda private (val sala: Sala, val reserva: List[Horario]):
 object Agenda:
     def apply(sala: Sala): Agenda = new Agenda(sala, Nil)
 
+// Tipos algébricos e pattern matching
+
+enum ResultadoReserva:
+    case Confirmada(agenda: Agenda)
+    case Conflito(horarioExistente: Horario)
+    case Invalida(erro: ErroReserva)
+
+def processarReserva(agenda: Agenda, s: SolicitacaoReserva): ResultadoReserva =
+    validarSolicitacao(s) match
+        case Left(erro) => ResultadoReserva.Invalida(erro)
+        case Right(solicitacao) =>
+            agenda.adicionarReserva(solicitacao.horario) match
+                case Left(horarioExistente) => ResultadoReserva.Conflito(horarioExistente)
+                case Right(agendaValida) => ResultadoReserva.Confirmada(agendaValida)
+            
+    
+
 @main def mainSistemaReservas(): Unit =
     ???
