@@ -17,7 +17,7 @@ def f1[T](l1: List[T]): List[T] = {
 
 O que faz o algoritmo `f1`?
 
-- [ ] a. Ele inverte a lista `l1` e retorna a nova lista.
+- [x] a. Ele inverte a lista `l1` e retorna a nova lista.
 - [ ] b. Ele faz uma cópia da lista original.
 - [ ] c. Ele concatena as duas listas `a` e `b`.
 - [ ] d. Ele inverte a lista `l1` e adiciona um elemento ao final.
@@ -42,11 +42,11 @@ def concatenate[A](xs: List[A], ys: List[A]): List[A] = {
 
 Assinale todas as alternativas corretas:
 
-- [ ] a. Apenas `xs` é duplicada na memória, enquanto `ys` é estruturalmente compartilhada.
+- [x] a. Apenas `xs` é duplicada na memória, enquanto `ys` é estruturalmente compartilhada.
 - [ ] b. A operação tem complexidade de tempo `O(n × k)`, onde `n` é o comprimento da lista `xs` e `k` é o comprimento da lista `ys`.
 - [ ] c. A operação tem complexidade de espaço `O(n × k)`, onde `n` é o comprimento da lista `xs` e `k` é o comprimento da lista `ys`.
 - [ ] d. Se `xs` for muito grande, a operação pode levar a estouro de pilha devido à recursão.
-- [ ] e. A operação utiliza recursão na cauda, o que permite otimização pelo compilador.
+- [x] e. A operação utiliza recursão na cauda, o que permite otimização pelo compilador.
 
 ---
 
@@ -63,14 +63,14 @@ val pontos = List(
   Ponto(2.0, 5.0)
 )
 
-val r1 = pontos.sortBy(_.y)
-val r2 = pontos.sortWith((p1, p2) => p1.x > p2.x)
+val r1 = pontos.sortBy(_.y) // P(3, 2), P(1, 4), P(2, 5)
+val r2 = pontos.sortWith((p1, p2) => p1.x > p2.x) // P(3, 2), P(2, 5), P(1, 4)
 ```
 
 Quais serão os valores das cabeças (`head`) das listas `r1` e `r2` após a execução?
 
 - [ ] a. `r1.head = Ponto(3.0, 2.0)` e `r2.head = Ponto(2.0, 5.0)`
-- [ ] b. `r1.head = Ponto(3.0, 2.0)` e `r2.head = Ponto(3.0, 2.0)`
+- [x] b. `r1.head = Ponto(3.0, 2.0)` e `r2.head = Ponto(3.0, 2.0)`
 - [ ] c. `r1.head = Ponto(2.0, 5.0)` e `r2.head = Ponto(3.0, 2.0)`
 - [ ] d. `r1.head = Ponto(1.0, 4.0)` e `r2.head = Ponto(3.0, 2.0)`
 - [ ] e. `r1.head = Ponto(1.0, 4.0)` e `r2.head = Ponto(1.0, 4.0)`
@@ -111,10 +111,10 @@ def selectionSort(xs: List[Int]): List[Int] = {
 
 Assinale todas as alternativas corretas sobre a complexidade e o comportamento desse algoritmo:
 
-- [ ] a. A complexidade de tempo do algoritmo é `O(n²)`, onde `n` é o tamanho da lista original.
-- [ ] b. Para cada elemento ordenado e inserido na lista final, a função `removeOne` pode reconstruir até `O(n)` nós na memória.
+- [x] a. A complexidade de tempo do algoritmo é `O(n²)`, onde `n` é o tamanho da lista original.
+- [x] b. Para cada elemento ordenado e inserido na lista final, a função `removeOne` pode reconstruir até `O(n)` nós na memória.
 - [ ] c. O algoritmo utiliza extensivamente compartilhamento estrutural, evitando qualquer alocação de novos nós na memória ao remover o menor elemento.
-- [ ] d. A complexidade de espaço auxiliar na pilha de execução é `O(n)`, pois as funções internas e a recursão principal não são otimizadas para recursão na cauda.
+- [x] d. A complexidade de espaço auxiliar na pilha de execução é `O(n)`, pois as funções internas e a recursão principal não são otimizadas para recursão na cauda.
 - [ ] e. A complexidade de tempo seria otimizada para `O(n log n)` se usássemos busca binária em `findMin`.
 
 ---
@@ -137,7 +137,7 @@ Quais são os valores finais de `r1` e `r2` após a execução?
 - [ ] b. `r1 = List(1, 2, 3, 4, 0)` e `r2 = 0`
 - [ ] c. `r1 = List(0, 1, 2, List(3, 4))` e `r2 = 4`
 - [ ] d. `r1 = List(0, 1, 2, 3, 4)` e `r2 = -10`
-- [ ] e. `r1 = List(0, 1, 2, 3, 4)` e `r2 = 0`
+- [x] e. `r1 = List(0, 1, 2, 3, 4)` e `r2 = 0`
 
 ---
 
@@ -156,7 +156,7 @@ O que ocorre com as listas `xs` e `ys` após a execução?
 - [ ] b. O elemento `4` é inserido no início de `xs`.
 - [ ] c. `xs` é modificada para conter o elemento `4`.
 - [ ] d. `xs` sofre uma mutação para incluir o elemento `4`, em seguida `ys` recebe uma referência a `xs`.
-- [ ] e. `ys` é uma nova lista contendo os elementos de `xs` mais o `4`, e `xs` permanece inalterada.
+- [x] e. `ys` é uma nova lista contendo os elementos de `xs` mais o `4`, e `xs` permanece inalterada.
 
 ---
 
@@ -164,11 +164,13 @@ O que ocorre com as listas `xs` e `ys` após a execução?
 
 A respeito da soma dos elementos de uma lista usando dobras em Scala (`foldLeft` e `foldRight`), assinale todas as alternativas corretas:
 
-- [ ] a. A expressão `xs.foldLeft(0)(_ + _)` é equivalente a `xs.foldRight(0)(_ + _)` em termos de resultado, pois a adição é uma operação associativa e comutativa.
-- [ ] b. O uso de dobras (*folds*) elimina a necessidade de definir explicitamente o passo recursivo e o caso base no código do usuário.
+- [x] a. A expressão `xs.foldLeft(0)(_ + _)` é equivalente a `xs.foldRight(0)(_ + _)` em termos de resultado, pois a adição é uma operação associativa e comutativa.
+- [x] b. O uso de dobras (*folds*) elimina a necessidade de definir explicitamente o passo recursivo e o caso base no código do usuário.
 - [ ] c. O método `foldRight` processa a lista da direita para a esquerda e é inerentemente recursivo na cauda, não consumindo espaço na pilha de execução.
-- [ ] d. A complexidade de tempo de ambos os métodos ao somar uma lista de tamanho `n` é `O(n)`.
-- [ ] e. O método `foldLeft` é implementado utilizando recursão na cauda, garantindo segurança contra estouro de pilha para listas muito grandes.
+- [x] d. A complexidade de tempo de ambos os métodos ao somar uma lista de tamanho `n` é `O(n)`.
+- [x] e. O método `foldLeft` é implementado utilizando recursão na cauda, garantindo segurança contra estouro de pilha para listas muito grandes.
+
+> `foldLeft` é recursivo na cauda, já `foldRight`, não
 
 ---
 
@@ -182,11 +184,12 @@ def comprimento(xs: List[Int]): Int =
   else 1 + comprimento(xs.tail)
 ```
 
-- [ ] a. A complexidade de tempo da função é `O(n)`, onde `n` é o comprimento da lista.
+- [x] a. A complexidade de tempo da função é `O(n)`, onde `n` é o comprimento da lista.
 - [ ] b. A função pode ser otimizada para `O(log n)` usando técnicas de memoização.
 - [ ] c. A função utiliza mutabilidade para armazenar o comprimento.
 - [ ] d. A complexidade de espaço é `O(1)`, pois não é necessário garantir persistência.
-- [ ] e. A função percorre toda a lista, visitando cada elemento uma vez.
+> recursividade simples, não cauda
+- [x] e. A função percorre toda a lista, visitando cada elemento uma vez.
 
 ---
 
@@ -202,11 +205,11 @@ def comprimento(xs: List[Int], acc: Int = 0): Int =
 
 Assinale todas as alternativas corretas:
 
-- [ ] a. A complexidade de tempo da função é `O(n)`, onde `n` é o comprimento da lista.
+- [x] a. A complexidade de tempo da função é `O(n)`, onde `n` é o comprimento da lista.
 - [ ] b. A função pode ser otimizada para `O(log n)` usando técnicas de memoização.
 - [ ] c. A função usa espaço `O(n)`.
 - [ ] d. A complexidade de espaço é `O(n)`, pois é necessário duplicar a lista devido à persistência.
-- [ ] e. A função utiliza recursão na cauda.
+- [x] e. A função utiliza recursão na cauda.
 
 ---
 
@@ -257,7 +260,7 @@ Qual das alternativas inclui uma adaptação correta **e** recursiva na cauda pa
 
 - [ ] a. Implementação H
 - [ ] b. Implementação F
-- [ ] c. Implementação G
+- [x] c. Implementação G
 - [ ] d. Implementação F e Implementação G
 - [ ] e. Implementação F e Implementação H
 
