@@ -22,6 +22,8 @@ em um predicado `p`.
 - **c)** Projete uma versão simplificada utilizando dobras (folds) com a
   assinatura `def filterFold[A](xs: List[A])(p: A => Boolean): List[A]`.
 
+[Solução 7.1](FilterFunc.scala)
+
 ---
 
 ## Exercício 7.2 — `map`
@@ -36,6 +38,8 @@ aplicando uma função `f`.
   `reverse` no caso base do acumulador.
 - **c)** Implemente uma versão baseada em dobras com a assinatura
   `def mapFold[A, B](xs: List[A])(f: A => B): List[B]`.
+
+[Solução 7.2](MapFunc.scala)
 
 ---
 
@@ -52,6 +56,8 @@ elementos da lista original, exceto o último. Por exemplo,
 - **b)** Explique as complexidades de tempo e espaço dessa operação.
   Justifique se ocorre ou não compartilhamento estrutural com a lista
   original.
+
+[Solução 7.3](InitFunc.scala)
 
 ---
 
@@ -70,6 +76,8 @@ mantidos e descartados.
 - **c)** Explique a complexidade de espaço de ambas as operações e discuta
   se ocorre ou não compartilhamento estrutural com a lista original.
 
+[Solução 7.4](TakeDropFuncs.scala)
+
 ---
 
 ## Exercício 7.5 — `zipWith`
@@ -83,6 +91,8 @@ aplicando uma função de combinação.
 - **b)** Implemente uma versão recursiva na cauda
   `def zipWithTail[A, B, C](xs: List[A], ys: List[B])(f: (A, B) => C): List[C]`,
   utilizando parâmetros acumuladores e a anotação `@tailrec`.
+
+[Solução 7.5](ZipWithFunc.scala)
 
 ---
 
@@ -99,6 +109,8 @@ função deve retornar `List(1, 2, 3, 1)`.
   `def compressTail[A](xs: List[A]): List[A]`.
 - **c)** Implemente uma versão baseada em dobras com a assinatura
   `def compressFold[A](xs: List[A]): List[A]`.
+
+[Solução 7.6](CompressFunc.scala)
 
 ---
 
