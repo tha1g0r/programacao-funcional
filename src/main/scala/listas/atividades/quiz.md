@@ -288,7 +288,7 @@ qual é o resultado?
 - [ ] a. `List(1, 2, 3, 4, 4)`
 - [ ] b. `List(4, 1, 2, 3)`
 - [ ] c. `List(4)`
-- [ ] d. `List(1, 2, 3, 4)`
+- [x] d. `List(1, 2, 3, 4)`
 - [ ] e. `List(4, 1, 2, 3, 4)`
 
 ---
@@ -315,7 +315,7 @@ O que a função `foo` faz?
 - [ ] b. Ela adiciona o elemento `elem` ao início da lista `xs`.
 - [ ] c. Ela remove o elemento `elem` da lista `xs`.
 - [ ] d. Ela inverte a lista `xs` e adiciona `elem` ao início.
-- [ ] e. Ela adiciona o elemento `elem` ao final da lista `xs`.
+- [x] e. Ela adiciona o elemento `elem` ao final da lista `xs`.
 
 ---
 
@@ -333,10 +333,12 @@ def append[A](xs: List[A], elem: A): List[A] = {
 Selecione apenas as alternativas corretas:
 
 - [ ] a. O algoritmo não cria uma nova lista, mas modifica a lista original.
-- [ ] b. O algoritmo tem complexidade de tempo `O(n)`, onde `n` é o comprimento da lista.
+- [x] b. O algoritmo tem complexidade de tempo `O(n)`, onde `n` é o comprimento da lista.
 - [ ] c. O algoritmo é eficiente, pois utiliza recursão na cauda.
 - [ ] d. O algoritmo tem complexidade de espaço `O(1)`.
-- [ ] e. O algoritmo não utiliza compartilhamento estrutural, pois cada chamada recursiva cria um novo nó.
+- [x] e. O algoritmo não utiliza compartilhamento estrutural, pois cada chamada recursiva cria um novo nó.
+
+> Toda vez que você escreve `xs.head :: append(xs.tail, elem)`, o Scala aloca um nó novo na memória — mesmo que `xs.head` seja "o mesmo valor" que já existia na lista original. `::` sempre cria uma célula nova; ele nunca reaproveita a célula da lista de entrada, porque a célula da lista de entrada tem seu próprio campo tail apontando para o resto da lista antiga — e você não pode mudar esse campo (imutabilidade), então não dá pra "reciclar" esse nó com um tail diferente
 
 ---
 
@@ -355,9 +357,9 @@ Assinale todas as alternativas corretas:
 
 - [ ] a. O algoritmo utiliza recursão na cauda, o que permite otimização pelo compilador.
 - [ ] b. O algoritmo tem complexidade de tempo `O(n)`, onde `n` é o comprimento da lista.
-- [ ] c. O algoritmo tem complexidade de espaço `O(n)`, onde `n` é o comprimento da lista.
+- [x] c. O algoritmo tem complexidade de espaço `O(n)`, onde `n` é o comprimento da lista.
 - [ ] d. O algoritmo tem complexidade de espaço `O(n²)`, pois cada chamada recursiva cria uma nova lista do zero.
-- [ ] e. O algoritmo tem complexidade de tempo `O(n²)`, onde `n` é o comprimento da lista.
+- [x] e. O algoritmo tem complexidade de tempo `O(n²)`, onde `n` é o comprimento da lista.
 
 ---
 
@@ -365,11 +367,11 @@ Assinale todas as alternativas corretas:
 
 Sobre a classe `List` imutável em Scala, assinale todas as alternativas corretas:
 
-- [ ] a. O método `head` retorna o primeiro elemento da lista, em tempo `O(1)`.
+- [x] a. O método `head` retorna o primeiro elemento da lista, em tempo `O(1)`.
 - [ ] b. O método `length` tem tempo `O(1)`, pois apenas acessa o tamanho armazenado da lista.
 - [ ] c. Adicionar um elemento no final da lista (`:+`) é uma operação de tempo constante.
 - [ ] d. O método `tail` retorna o último elemento da lista, em tempo `O(n)`.
-- [ ] e. Adicionar um elemento no início da lista (`::`) é uma operação eficiente, de tempo `O(1)`.
+- [x] e. Adicionar um elemento no início da lista (`::`) é uma operação eficiente, de tempo `O(1)`.
 
 ---
 
@@ -377,11 +379,11 @@ Sobre a classe `List` imutável em Scala, assinale todas as alternativas correta
 
 Sobre a hierarquia de tipos da classe `List` em Scala, assinale todas as alternativas corretas:
 
-- [ ] a. O objeto `Nil` estende `List[Nothing]`, o que permite que ele seja usado como uma lista de qualquer tipo devido à covariância de `List[+A]`.
+- [x] a. O objeto `Nil` estende `List[Nothing]`, o que permite que ele seja usado como uma lista de qualquer tipo devido à covariância de `List[+A]`.
 - [ ] b. A classe `List` é invariante em seu parâmetro de tipo `A`, de modo que um `List[Int]` não pode ser atribuído a um `List[Any]`.
-- [ ] c. A classe concreta `::` (`Cons`) é um `case class` que armazena a cabeça (`head`) e a cauda (`tail`) da lista.
+- [x] c. A classe concreta `::` (`Cons`) é um `case class` que armazena a cabeça (`head`) e a cauda (`tail`) da lista.
 - [ ] d. Chamar o método `head` ou `tail` diretamente no objeto `Nil` retorna um valor padrão ou uma lista vazia, respectivamente, sem lançar exceções.
-- [ ] e. A classe `List` é abstrata e selada (`sealed`), impossibilitando extensões arbitrárias fora de seu arquivo de definição.
+- [x] e. A classe `List` é abstrata e selada (`sealed`), impossibilitando extensões arbitrárias fora de seu arquivo de definição.
 
 ---
 
@@ -391,7 +393,7 @@ A recursão estrutural difere da recursão generativa em vários aspectos fundam
 
 Qual das seguintes alternativas apresenta uma característica exclusiva da recursão estrutural?
 
-- [ ] a. Os subproblemas processados em cada chamada recursiva são extraídos diretamente dos subcomponentes imediatos da estrutura de entrada.
+- [x] a. Os subproblemas processados em cada chamada recursiva são extraídos diretamente dos subcomponentes imediatos da estrutura de entrada.
 - [ ] b. A prova de terminação do algoritmo é complexa e exige demonstrar que um valor de controle diminui com base em uma métrica gerada dinamicamente.
 - [ ] c. Ela processa os dados de trás para frente usando obrigatoriamente recursão em cauda.
 - [ ] d. Ela é exemplificada por algoritmos como o Quicksort, onde subvetores são gerados a partir de partições dinâmicas.
@@ -403,10 +405,10 @@ Qual das seguintes alternativas apresenta uma característica exclusiva da recur
 
 Sobre a garantia de terminação e percurso na recursão estrutural aplicada a listas encadeadas finitas, assinale todas as alternativas corretas:
 
-- [ ] a. Ao contrário da recursão generativa, a recursão estrutural não requer uma função de controle complexa para provar que o loop recursivo irá parar.
-- [ ] b. A terminação é garantida naturalmente se a estrutura de dados de entrada for finita, pois cada chamada consome uma cauda (`tail`) que é estritamente menor.
+- [x] a. Ao contrário da recursão generativa, a recursão estrutural não requer uma função de controle complexa para provar que o loop recursivo irá parar.
+- [x] b. A terminação é garantida naturalmente se a estrutura de dados de entrada for finita, pois cada chamada consome uma cauda (`tail`) que é estritamente menor.
 - [ ] c. Se a lista de entrada for infinita, como um fluxo preguiçoso infinito, a recursão estrutural avaliada de forma estrita de todas as formas terminará com sucesso.
-- [ ] d. O caso base da recursão estrutural em listas corresponde obrigatoriamente à verificação da lista vazia (`Nil` ou `isEmpty`).
+- [x] d. O caso base da recursão estrutural em listas corresponde obrigatoriamente à verificação da lista vazia (`Nil` ou `isEmpty`).
 - [ ] e. A recursão estrutural depende de gerar novos dados que não existiam na entrada para decidir quando parar.
 
 ---
@@ -419,7 +421,7 @@ Por que a operação de adicionar um elemento no início (`::`) aproveita o comp
 
 - [ ] a. Porque listas imutáveis são implementadas como árvores binárias de busca, onde a inserção à esquerda é mais rápida.
 - [ ] b. Porque a operação de `append` duplica apenas o último elemento da lista, enquanto `cons` copia toda a lista na memória.
-- [ ] c. Porque o operador `cons` (`::`) aloca apenas um novo nó apontando para a lista original existente, enquanto o `append` (`:+`) exige duplicar todos os nós da lista original para ajustar o ponteiro do último elemento.
+- [x] c. Porque o operador `cons` (`::`) aloca apenas um novo nó apontando para a lista original existente, enquanto o `append` (`:+`) exige duplicar todos os nós da lista original para ajustar o ponteiro do último elemento.
 - [ ] d. Porque o operador `::` altera diretamente a propriedade mutável `tail` do objeto original, enquanto o `:+` lança uma exceção.
 - [ ] e. Porque a recursão na cauda impede o compartilhamento de dados em qualquer operação de inserção.
 
@@ -430,7 +432,7 @@ Por que a operação de adicionar um elemento no início (`::`) aproveita o comp
 Em relação ao compartilhamento estrutural em listas imutáveis, assinale todas as alternativas corretas sobre sua segurança e implicações de memória:
 
 - [ ] a. Chamar o método `tail` em uma lista exige a cópia profunda de todos os elementos restantes.
-- [ ] b. Operações como concatenar duas listas com `xs ++ ys` compartilham estruturalmente a lista da direita (`ys`), copiando apenas a lista da esquerda (`xs`).
-- [ ] c. O compartilhamento estrutural reduz drasticamente o consumo de memória ao permitir que múltiplas listas compartilhem referências para caudas comuns.
-- [ ] d. O compartilhamento estrutural é completamente seguro porque as listas são imutáveis; não há risco de uma alteração em uma lista afetar outras listas que compartilham a mesma cauda.
+- [x] b. Operações como concatenar duas listas com `xs ++ ys` compartilham estruturalmente a lista da direita (`ys`), copiando apenas a lista da esquerda (`xs`).
+- [x] c. O compartilhamento estrutural reduz drasticamente o consumo de memória ao permitir que múltiplas listas compartilhem referências para caudas comuns.
+- [x] d. O compartilhamento estrutural é completamente seguro porque as listas são imutáveis; não há risco de uma alteração em uma lista afetar outras listas que compartilham a mesma cauda.
 - [ ] e. Modificar um elemento no meio de uma lista imutável pode ser feito em tempo `O(1)` sem quebrar o compartilhamento estrutural.
