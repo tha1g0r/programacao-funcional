@@ -105,4 +105,14 @@ Informe os elementos que pertencem a `set1`, mas não a `set2`. O algoritmo deve
 
 ## Restrições
 
-As operações devem ser implementadas usando recursão e casamento de padrões, respeitando a complexidade de tempo linear.
+Todas as funções devem ser puras, ou seja, não devem ter efeitos colaterais e devem ser determinísticas. Portanto, não são permitidos:
+
+- Uso de variáveis mutáveis, como `var`.
+- Uso de estruturas de controle imperativas, como `for`, `while` ou `do-while`.
+- Uso de estruturas de dados mutáveis.
+- Disparo de exceções, como `throw` ou `try-catch`.
+- Uso de funções de entrada/saída, como `print`, `readLine` ou `System.out.println`.
+
+Além disso, a lógica das funções deve ser estruturada por meio de casamento de padrões (*pattern matching*) recursivo direto. Não utilize conversão ou testes de tipos (`asInstanceOf` ou `isInstanceOf`).
+
+**Observação:** Para fins de simplificar os algoritmos, não é necessário que as implementações sejam recursivas na cauda.
