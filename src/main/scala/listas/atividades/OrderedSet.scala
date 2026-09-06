@@ -32,9 +32,13 @@ class OrderedSet[A](val comp: (A, A) => Int) {
       * @param elem Elemento a ser inserido
       * @return Nova lista ordenada com o elemento inserido
     */
-    def insert(set: List[A], elem: A): List[A] = {
-        ???
-    }
+    def insert(set: List[A], elem: A): List[A] = set match
+        case Nil => List(elem)
+        case head :: tail =>
+            comp(elem, head) match
+                case result if result < 0 => elem :: set
+                case 0 => set
+                case _ => head :: insert(tail, elem)
 
     /**
       * Realiza a união de dois conjuntos ordenados.
@@ -81,3 +85,10 @@ class OrderedSet[A](val comp: (A, A) => Int) {
         ???
     }
 }
+
+@main def mainOrderesSet(): Unit =
+    val setOp = new OrderedSet[Int]((x, y) => x.compare(y))
+    val s1 = List(1, 3, 5)
+    val s2 = List(2, 3, 6)
+
+    println(setOp.insert(s1, 4))
