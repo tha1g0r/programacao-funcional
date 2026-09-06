@@ -91,9 +91,14 @@ class OrderedSet[A](val comp: (A, A) => Int) {
       * @param set2 Segundo conjunto
       * @return Diferença (set1 \ set2)
     */
-    def difference(set1: List[A], set2: List[A]): List[A] = {
-        ???
-    }
+    def difference(set1: List[A], set2: List[A]): List[A] = (set1, set2) match
+        case (Nil, _) => Nil
+        case (s1, Nil) => s1
+        case (h1 :: t1, h2 :: t2) =>
+            comp(h1, h2) match
+                case result if result < 0 => h1 :: difference(t1, set2)
+                case 0 => difference(t1, t2)
+                case _ => difference(set1, t2)
 }
 
 @main def mainOrderesSet(): Unit =
@@ -104,3 +109,4 @@ class OrderedSet[A](val comp: (A, A) => Int) {
     println(setOp.insert(s1, 4))
     println(setOp.union(s1, s2))
     println(setOp.intersect(s1, s2))
+    println(setOp.difference(s1, s2))
