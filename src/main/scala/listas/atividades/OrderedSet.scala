@@ -51,9 +51,14 @@ class OrderedSet[A](val comp: (A, A) => Int) {
       * @param set2 Segundo conjunto
       * @return União dos conjuntos
     */
-    def union(set1: List[A], set2: List[A]): List[A] = {
-        ???
-    }
+    def union(set1: List[A], set2: List[A]): List[A] = (set1, set2) match
+        case (Nil, s2) => s2
+        case (s1, Nil) => s1
+        case (h1 :: t1, h2 :: t2) =>
+            comp(h1, h2) match
+                case result if result < 0 => h1 :: union(t1, set2)
+                case 0 => h1 :: union(t1, t2)
+                case _ => h2 :: union(set1, t2)
 
     /**
       * Realiza a interseção de dois conjuntos ordenados.
@@ -92,3 +97,4 @@ class OrderedSet[A](val comp: (A, A) => Int) {
     val s2 = List(2, 3, 6)
 
     println(setOp.insert(s1, 4))
+    println(setOp.union(s1, s2))
