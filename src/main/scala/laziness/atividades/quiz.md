@@ -6,7 +6,7 @@ Quais são as principais aplicações da avaliação preguiçosa?
 
 **Escolha uma opção:**
 
-- [ ] a. Estruturas de dados infinitas e criação de fluxo de avaliação customizado.
+- [x] a. Estruturas de dados infinitas e criação de fluxo de avaliação customizado.
 - [ ] b. Apenas para otimização de algoritmos de ordenação.
 - [ ] c. Somente criação de interfaces gráficas e manipulação de arquivos.
 - [ ] d. Apenas otimização de memória e processamento paralelo.
@@ -20,11 +20,11 @@ Sobre a classificação de linguagens quanto ao tipo de avaliação, assinale as
 
 **Escolha uma ou mais:**
 
-- [ ] a. Haskell e Miranda são exemplos de linguagens não-estritas.
-- [ ] b. Scala oferece mecanismos de avaliação preguiçosa mesmo sendo uma linguagem estrita.
+- [x] a. Haskell e Miranda são exemplos de linguagens não-estritas.
+- [x] b. Scala oferece mecanismos de avaliação preguiçosa mesmo sendo uma linguagem estrita.
 - [ ] c. Linguagens não-estritas não podem implementar avaliação ansiosa.
 - [ ] d. Linguagens estritas não podem implementar mecanismos de avaliação preguiçosa.
-- [ ] e. Java, C, Python e Scala são exemplos de linguagens estritas.
+- [x] e. Java, C, Python e Scala são exemplos de linguagens estritas.
 
 ---
 
@@ -34,10 +34,10 @@ Sobre o uso de avaliação preguiçosa para otimização, assinale as alternativ
 
 **Escolha uma ou mais:**
 
-- [ ] a. É útil quando valores podem nunca ser necessários.
+- [x] a. É útil quando valores podem nunca ser necessários.
 - [ ] b. Sempre resulta em programas mais rápidos.
-- [ ] c. Permite adiar operações custosas até serem realmente necessárias.
-- [ ] d. É especialmente valiosa em inicialização de objetos complexos.
+- [x] c. Permite adiar operações custosas até serem realmente necessárias.
+- [x] d. É especialmente valiosa em inicialização de objetos complexos.
 - [ ] e. Deve ser usada em todas as variáveis para máxima eficiência.
 
 ---
@@ -48,11 +48,11 @@ Sobre as considerações de quando usar avaliação preguiçosa, assinale as alt
 
 **Escolha uma ou mais:**
 
-- [ ] a. É útil para operações que podem falhar ou gerar exceções.
-- [ ] b. É recomendada para propriedades custosas que podem não ser acessadas.
+- [x] a. É útil para operações que podem falhar ou gerar exceções.
+- [x] b. É recomendada para propriedades custosas que podem não ser acessadas.
 - [ ] c. Sempre melhora a performance independentemente do contexto.
-- [ ] d. É benéfica quando há incerteza se um valor será necessário.
-- [ ] e. Deve ser evitada em computações que são sempre necessárias.
+- [x] d. É benéfica quando há incerteza se um valor será necessário.
+- [x] e. Deve ser evitada em computações que são sempre necessárias.
 
 ---
 
@@ -62,7 +62,7 @@ Em qual cenário a avaliação preguiçosa seria MENOS benéfica?
 
 **Escolha uma opção:**
 
-- [ ] a. Valores que são sempre acessados imediatamente após a definição.
+- [x] a. Valores que são sempre acessados imediatamente após a definição.
 - [ ] b. Propriedades custosas de objetos que são raramente acessadas.
 - [ ] c. Operações que podem gerar erros se avaliadas desnecessariamente.
 - [ ] d. Argumentos de funções que podem não ser utilizados.
@@ -90,7 +90,7 @@ Qual será a ordem de saída do programa?
 - [ ] a. "Avaliando x", "Amarração finalizada", 42
 - [ ] b. Apenas 42 será impresso.
 - [ ] c. 42, "Amarração finalizada", "Avaliando x"
-- [ ] d. "Amarração finalizada", "Avaliando x", 42
+- [x] d. "Amarração finalizada", "Avaliando x", 42
 - [ ] e. "Avaliando x", 42, "Amarração finalizada"
 
 ---
@@ -102,10 +102,10 @@ Sobre memoização em amarrações preguiçosas (lazy val), assinale as alternat
 **Escolha uma ou mais:**
 
 - [ ] a. Cada acesso à variável lazy resulta em nova avaliação.
-- [ ] b. A primeira avaliação calcula e armazena o valor para acessos futuros.
+- [x] b. A primeira avaliação calcula e armazena o valor para acessos futuros.
 - [ ] c. Memoização não se aplica a amarrações preguiçosas, apenas a argumentos preguiçosos.
-- [ ] d. Acessos subsequentes retornam o valor já calculado sem recalcular.
-- [ ] e. O processo envolve computação adiada seguida de armazenamento do resultado.
+- [x] d. Acessos subsequentes retornam o valor já calculado sem recalcular.
+- [x] e. O processo envolve computação adiada seguida de armazenamento do resultado.
 
 ---
 
@@ -116,10 +116,10 @@ Sobre o uso de amarrações preguiçosas, assinale as alternativas corretas:
 **Escolha uma ou mais:**
 
 - [ ] a. Sempre tornam o programa mais rápido.
-- [ ] b. São especialmente úteis quando o valor é computacionalmente caro.
-- [ ] c. Evitam cálculos desnecessários quando a variável pode nunca ser acessada.
+- [x] b. São especialmente úteis quando o valor é computacionalmente caro.
+- [x] c. Evitam cálculos desnecessários quando a variável pode nunca ser acessada.
 - [ ] d. Deve-se ter como boa prática usar amarrações preguiçosas para todas as variáveis em Scala.
-- [ ] e. Permitem inicialização rápida de objetos com propriedades custosas.
+- [x] e. Permitem inicialização rápida de objetos com propriedades custosas.
 
 ---
 
@@ -129,10 +129,10 @@ Sobre propriedades preguiçosas em classes, assinale as alternativas corretas:
 
 **Escolha uma ou mais:**
 
-- [ ] a. Uma vez calculadas, são memoizadas para acessos futuros.
+- [x] a. Uma vez calculadas, são memoizadas para acessos futuros.
 - [ ] b. Não podem ser usadas em case classes.
-- [ ] c. São especialmente úteis em classes imutáveis.
-- [ ] d. São úteis para adiar inicialização de propriedades custosas.
+- [x] c. São especialmente úteis em classes imutáveis.
+- [x] d. São úteis para adiar inicialização de propriedades custosas.
 - [ ] e. Devem ser recalculadas sempre que acessadas.
 
 ---
@@ -144,10 +144,10 @@ Sobre a diferença entre propriedades preguiçosas e métodos, ambos de classes,
 **Escolha uma ou mais:**
 
 - [ ] a. Não há diferença prática entre eles.
-- [ ] b. Propriedades preguiçosas são calculadas apenas uma vez.
+- [x] b. Propriedades preguiçosas são calculadas apenas uma vez.
 - [ ] c. Métodos são mais eficientes para cálculos custosos repetidos.
-- [ ] d. Propriedades preguiçosas são mais eficientes para cálculos custosos repetidos.
-- [ ] e. Métodos são reavaliados a cada chamada.
+- [x] d. Propriedades preguiçosas são mais eficientes para cálculos custosos repetidos.
+- [x] e. Métodos são reavaliados a cada chamada.
 
 ---
 
