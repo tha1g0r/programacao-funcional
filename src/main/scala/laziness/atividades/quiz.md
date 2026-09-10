@@ -187,7 +187,7 @@ Quantas vezes cada mensagem será impressa?
 
 - [ ] a. "Contando palavras...": 2 vezes, "Contando caracteres...": 2 vezes, "Contando linhas...": 0 vezes
 - [ ] b. "Contando palavras...": 1 vez, "Contando caracteres...": 2 vezes, "Contando linhas...": 0 vezes
-- [ ] c. "Contando palavras...": 2 vezes, "Contando caracteres...": 1 vez, "Contando linhas...": 0 vezes
+- [x] c. "Contando palavras...": 2 vezes, "Contando caracteres...": 1 vez, "Contando linhas...": 0 vezes
 - [ ] d. "Contando palavras...": 1 vez, "Contando caracteres...": 1 vez, "Contando linhas...": 1 vez
 - [ ] e. "Contando palavras...": 2 vezes, "Contando caracteres...": 1 vez, "Contando linhas...": 1 vez
 
@@ -202,7 +202,7 @@ class LazyValue[T](computation: => T) {
   lazy val value: T = {
     println("Executando computação...")
     computation
-  }
+  } // lazy val value é o "cache" do resultado de computation
 
   def get: T = value
 }
@@ -224,7 +224,7 @@ Quantas vezes "Computação custosa executada" será impresso?
 
 **Escolha uma opção:**
 
-- [ ] a. Uma vez - na primeira chamada de get
+- [x] a. Uma vez - na primeira chamada de get
 - [ ] b. Duas vezes - primeira e segunda chamada
 - [ ] c. Nenhuma vez - a computação nunca é executada
 - [ ] d. Três vezes - a cada acesso
@@ -253,7 +253,7 @@ Quando as chamadas da função `expensiveComputation` serão executadas?
 - [ ] b. Antes da execução do corpo da função add.
 - [ ] c. Nunca, pois não são necessárias.
 - [ ] d. Apenas se elas forem referenciadas fora do corpo da função.
-- [ ] e. Durante a execução do corpo da função add.
+- [x] e. Durante a execução do corpo da função add.
 
 ---
 
@@ -282,7 +282,7 @@ Quantas vezes "Gerando mensagem..." será impresso?
 **Escolha uma opção:**
 
 - [ ] a. Depende da implementação do compilador
-- [ ] b. Três vezes - o argumento é reavaliado a cada referência no loop
+- [x] b. Três vezes - o argumento é reavaliado a cada referência no loop
 - [ ] c. Uma vez - o argumento é avaliado apenas na primeira referência
 - [ ] d. Nenhuma vez - o argumento nunca é usado
 - [ ] e. Duas vezes - primeira e última iteração
@@ -295,9 +295,9 @@ Sobre a implementação de chamada por nome usando thunks, assinale as alternati
 
 **Escolha uma ou mais:**
 
-- [ ] a. Scala permite a sintaxe `x: => Int` para parâmetros de chamada por nome.
-- [ ] b. Thunks são funções anônimas sem parâmetros que encapsulam uma expressão.
-- [ ] c. Argumentos são avaliados sempre que referenciados no corpo da função.
+- [x] a. Scala permite a sintaxe `x: => Int` para parâmetros de chamada por nome.
+- [x] b. Thunks são funções anônimas sem parâmetros que encapsulam uma expressão.
+- [x] c. Argumentos são avaliados sempre que referenciados no corpo da função.
 - [ ] d. Thunks são sempre mais eficientes que chamada por valor.
 - [ ] e. Thunks só podem ser usados com tipos primitivos.
 
@@ -333,7 +333,7 @@ Quantas vezes "Executando computation()" será impresso?
 - [ ] b. Quatro vezes - incluindo a definição do lazy val
 - [ ] c. Três vezes - uma para cada referência na expressão
 - [ ] d. Uma vez - todas as referências usam o cache
-- [ ] e. Duas vezes - uma para o cache, uma para a referência direta
+- [x] e. Duas vezes - uma para o cache, uma para a referência direta
 
 ---
 
@@ -359,14 +359,16 @@ def process(flag: Boolean, compute: => Int, fallback: Int): Int = {
 }
 
 process(true, expensiveOperation(5), 100)
+// Branch A -> Processing 5 -> Processing 5
 process(false, expensiveOperation(7), 200)
+// Branch B -> Processing 7
 ```
 
 Qual a sequência de impressões do programa?
 
 **Escolha uma opção:**
 
-- [ ] a. "Branch A", "Processing 5", "Processing 5", "Branch B", "Processing 7"
+- [x] a. "Branch A", "Processing 5", "Processing 5", "Branch B", "Processing 7"
 - [ ] b. "Processing 5", "Processing 5", "Branch A", "Branch B", "Processing 7"
 - [ ] c. "Branch A", "Processing 5", "Processing 7", "Branch B"
 - [ ] d. "Branch A", "Branch B", "Processing 5", "Processing 7"
@@ -405,7 +407,7 @@ Quantas vezes "Calculando triangular:" será impresso?
 - [ ] b. Infinitos - a sequência é infinita
 - [ ] c. Exatamente 3 - apenas os números pares encontrados
 - [ ] d. Exatamente 6 - o dobro dos números solicitados
-- [ ] e. Mais de 3 - precisa calcular números ímpares também para encontrar os pares
+- [x] e. Mais de 3 - precisa calcular números ímpares também para encontrar os pares
 
 ---
 
@@ -437,7 +439,7 @@ Quantas mensagens do tipo "Calculando..." serão impressas no total?
 
 - [ ] a. 6 mensagens - duas vezes para cada elemento acessado
 - [ ] b. 5 mensagens - incluindo recálculo do elemento repetido
-- [ ] c. 4 mensagens - uma para cada potência calculada
+- [x] c. 4 mensagens - uma para cada potência calculada
 - [ ] d. 7 mensagens - incluindo todos os elementos intermediários para chegar ao 4º
 - [ ] e. 3 mensagens - apenas para os elementos únicos acessados
 
@@ -468,7 +470,7 @@ O que acontece quando este código é executado?
 
 **Escolha uma opção:**
 
-- [ ] a. O programa entra em recursão infinita imprimindo "Processando:" indefinidamente
+- [x] a. O programa entra em recursão infinita imprimindo "Processando:" indefinidamente
 - [ ] b. O programa imprime apenas "Estrutura criada" e "Resultado: 0"
 - [ ] c. O programa imprime "Processando: 1" e termina com "Resultado: 1"
 - [ ] d. O programa imprime "Processando: 1", "Processando: 2" e termina com "Resultado: 2"
