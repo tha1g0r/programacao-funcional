@@ -5,6 +5,7 @@ lazy val root = (project in file("."))
   .settings(
     name := "scala-estudos",
     libraryDependencies ++= Seq(
+      "org.typelevel" %% "cats-core" % "2.13.0",
       "org.scalatest" %% "scalatest" % "3.2.19" % Test,
       "org.scala-lang.modules" %% "scala-parallel-collections" % "1.0.4"
     )
